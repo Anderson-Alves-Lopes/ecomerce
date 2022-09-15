@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+/* http://alunos.b7web.com.br:501 */
+/* http://localhost:3000/ */
+/* http://alunos.b7web.com.br:501/ping */
+body{
+  background-color:#eee;
+}
