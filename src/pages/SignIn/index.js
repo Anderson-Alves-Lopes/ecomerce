@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {SignInArea} from './styled';
-import useApi from '../../helpers/OLXApi'; 
+import useApi from '../../helpers/OlxApi'; 
 import {doLogin} from '../../helpers/AuthHandler';
 
 import {TemplateContainer, TemplateTitle, ErrorMessage} from '../../components/Template';
@@ -17,7 +17,7 @@ export const SignIn = () =>{
     const handleSubmit = async (e) =>{
        e.preventDefault();
        setDisabled(true);
-
+       setError('');
      const json = await api.login(email, password);
 
      if(json.error){
@@ -27,6 +27,7 @@ export const SignIn = () =>{
            doLogin(json.token, remenberPassword);
            window.location.href = '/';
      }
+       setDisabled(false);
     }
     return(
 
@@ -53,7 +54,8 @@ export const SignIn = () =>{
                     <div className="area--input">
                         <input type="password" 
                         disabled={disabled}
-                        value={e=>setPassword(e.target.value)}
+                        value={password}
+                        onChange={e=>setPassword(e.target.value)}
                         required
                         />
                     </div>

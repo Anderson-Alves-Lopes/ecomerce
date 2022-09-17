@@ -42,7 +42,10 @@ export const HeaderArea = styled.div`
       li{
          margin: 0 20px;
 
-         a{
+         a, button{
+            border:0;
+            background-color:transparent;
+            cursor:pointer;
             color:#000;
             font-size:14px;
             transition:all ease .4s;
